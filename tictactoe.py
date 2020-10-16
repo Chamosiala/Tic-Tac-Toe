@@ -13,9 +13,13 @@ print(f"""---------
 
 while 1:
     while 1:
-        x, y = input("Enter the coordinates: ").split()
+        coords = input("Enter the coordinates: ").split()
+        x = coords[0]
+        y = coords[1]
         if not x.isalnum() or not y.isalnum():
             print("You should enter numbers!")
+        elif len(coords) > 2:
+            print("You should enter only 2 numbers!")
         elif int(x) > 3 or int(x) < 1 or int(y) > 3 or int(y) < 1:
             print("Coordinates should be from 1 to 3!")
         elif board[abs(int(y) - 3)][int(x) - 1] != ' ':
